@@ -136,7 +136,7 @@
 	background-color: var(--bgColorSoft);
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 	color: var(--scriptColor);
-	margin-right: 50px;
+	margin-left: 12px;
 }
 .get-sign{
     display: flex;
@@ -148,13 +148,23 @@
 	width: 2.2rem;
     margin-right: 5px;
 }
-.restart-btn {
+.right-btns{
+	display: flex;
+	gap: 1rem;
+}
+.restart-btn,.home-btn {
 	background-color: var(--scriptColor);
 	height: 3rem;
 	width: 3rem;
 	border-radius: 15px;
 	cursor: pointer;
+	transition: 0.3s ease-in-out;
 }
+.restart-btn:hover,.home-btn:hover{
+	filter: brightness(80%);
+	
+}
+
 .main-section {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);

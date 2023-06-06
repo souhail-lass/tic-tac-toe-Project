@@ -6,6 +6,7 @@ const svg2 = document.querySelector("#svg2");
 const svg1 = document.querySelector("#path1");
 const playBtn = document.querySelector(".start-game");
 const restartBtn = document.querySelector(".restart-btn");
+const homeBtn = document.querySelector(".home-btn");
 const gameInitializer = document.querySelector(".game-initializer");
 const gameLoad = document.querySelector(".game-started");
 const boxes = Array.from(document.querySelectorAll(".box"));
@@ -107,20 +108,20 @@ const gamePlay = () => {
 	boxes.forEach((box) => box.addEventListener("click", boxClicked));
 	hoverBox(); // Used to get the first hover for the boxes
 };
-const quitGame =()=> {
+const quitGame = () => {
 	overlay.style.display = "none";
 	gameLoad.style.display = "none";
 	gameInitializer.style.display = "flex";
 	gameRestart();
-}
-const NextRound = ()=>{
+};
+const NextRound = () => {
 	overlay.style.display = "none";
 	clearSpaces();
-}
-quitButton.addEventListener("click",quitGame);
-nextRoundButton.addEventListener("click",NextRound);
-adios.addEventListener("click",quitGame);
-next.addEventListener("click",NextRound);
+};
+quitButton.addEventListener("click", quitGame);
+nextRoundButton.addEventListener("click", NextRound);
+adios.addEventListener("click", quitGame);
+next.addEventListener("click", NextRound);
 
 // Winning Combinations :
 
@@ -163,7 +164,7 @@ const checkWinner = (player) => {
 			break;
 		}
 	}
-	
+
 	if (winner) {
 		return { winner, isTie: false }; // Return winner and isTie as an object
 	} else if (isTie) {
@@ -248,4 +249,22 @@ const gameRestart = () => {
 	signText.innerHTML = `<img src='./assets/${currentPlayer}nrml.svg'>`;
 };
 
-restartBtn.addEventListener("click", gameRestart);
+restartBtn.addEventListener("click", () => {
+	setTimeout(() => {
+		restartBtn.classList.add("restartEffect");
+		gameRestart();
+		setTimeout(() => {
+			restartBtn.classList.remove("restartEffect");
+		}, 300);
+	}, 100);
+});
+
+homeBtn.addEventListener("click", () => {
+	setTimeout(() => {
+		homeBtn.classList.add("homeEffect");
+		setTimeout(() => {
+			homeBtn.classList.remove("homeEffect");
+			quitGame();
+		}, 300);
+	}, 100);
+});

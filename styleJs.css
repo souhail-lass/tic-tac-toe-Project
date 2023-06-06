@@ -1,0 +1,56 @@
+.bgWhite{
+    background-color: var(--scriptColor) !important;
+    transition: .15s ease;
+    
+}
+.bgDark{
+    background-color: var(--bgColor)!important;
+    transition: .15s ease;
+
+}
+
+.xDark{
+    fill: var(--bgColor) ;
+    transition: .15s ease;
+}
+
+.oWhite{
+    fill: var(--scriptColor);
+    stroke: var(--scriptColor);
+    transition: .15s ease;
+}
+.PlayBtn-Effect{
+    transform: scale(.95) translateY(5px) ;
+    filter: brightness(1.2);
+}
+.xHover:not(.X):not(.circle):hover{
+    background-image: url(assets/Xnrml.svg);
+	background-position: center;
+	background-color: var(--green);
+}
+.xImg{
+    height: 100%;
+	width: 100%;
+    background-image: url(assets/Xgreen.svg);
+	background-position: center;
+
+}
+.oHover:not(.X):not(.circle):hover{
+    background-image: url(assets/Onrml.svg);
+	background-position: center;
+	background-color: var(--yellow);
+}
+.oImg{
+    height: 100%;
+	width: 100%;
+    background-image: url(assets/Oyellow.svg);
+	background-position: center;
+}
+.winnerX{
+    background-color:var(--green) !important;
+    background-image:url(assets/XbgColor.svg)!important;
+}
+.winnerO{
+    background-color:var(--yellow) !important;
+    background-image:url(assets/ObgColor.svg)!important;
+    }

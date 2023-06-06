@@ -1,0 +1,285 @@
+@font-face {
+	font-family: "Outfit";
+	src: url("./fonts/outfit.ttf");
+}
+
+:root {
+	--bgColor: #1a2b33;
+	--bgColorSoft: #1e3640;
+	--green: #31c3bd;
+	--yellow: #f2b138;
+	--scriptColor: #a9bec8;
+	--scriptColorSoft: #748289;
+	--overlay:#121e24;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Outfit", sans-serif;
+}
+
+.game-initializer {
+	height: 100vh;
+	width: 100vw;
+	background-color: var(--bgColor);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.playerPick {
+	height: 35%;
+	width: 35%;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--bgColorSoft);
+	align-items: center;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+#icon {
+	display: flex;
+	margin-bottom: 20px;
+}
+.mark{
+	height: 3rem;
+	width: 3rem;
+}
+#svg1,
+#svg2 {
+	height: 7rem;
+	width: 7rem;
+}
+.playerPick h1 {
+	color: var(--scriptColor);
+	font-size: 1.5rem;
+	margin-top: 30px;
+}
+.mark-choice {
+	height: 45%;
+	width: 85%;
+	padding: 15px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	background-color: var(--bgColor);
+	border-radius: 15px;
+	margin-top: 30px;
+	cursor: pointer;
+}
+
+#X {
+	display: flex;
+	justify-content: center;
+	border-radius: 20px;
+	background-color: var(--bgColor);
+}
+
+#O {
+	display: flex;
+	justify-content: center;
+	background-color: var(--scriptColor);
+	border-radius: 20px;
+}
+.notice {
+	color: rgba(255, 255, 255, 0.4);
+	text-transform: uppercase;
+	letter-spacing: 0.07em;
+	margin-top: 20px;
+	font-size: 1.2em;
+}
+.start-game {
+	cursor: pointer;
+	border-style: none;
+	border-radius: 10px;
+	background-color: var(--yellow);
+	color: var(--bgColor);
+	height: 7%;
+	width: 20%;
+	margin-top: 30px;
+	font-size: 1.3em;
+	text-transform: uppercase;
+	font-weight: bold;
+	transition: 0.3s ease-in-out;
+}
+.game-started {
+	height: 100vh;
+	width: 100vw;
+	background-color: var(--bgColor);
+	display: none;
+	position: relative;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+.upper-section {
+	width: 70%;
+	height: 15%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.main-section {
+	width: 30%;
+	height: 55%;
+}
+
+.player-turn {
+	display: flex;
+	height: 40%;
+	width: 15%;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--bgColorSoft);
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+	color: var(--scriptColor);
+	margin-right: 50px;
+}
+.get-sign{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.get-sign img{
+    height: 2.2rem;
+	width: 2.2rem;
+    margin-right: 5px;
+}
+.restart-btn {
+	background-color: var(--scriptColor);
+	height: 3rem;
+	width: 3rem;
+	border-radius: 15px;
+	cursor: pointer;
+}
+.main-section {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 1.7rem;
+}
+.main-section div {
+	background-color: var(--bgColorSoft);
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+	border: 1px solid #47555b;
+	border-radius: 10px;
+}
+
+.scoreBoard {
+	display: flex;
+	justify-content: space-between;
+	width: 40%;
+	height: 10%;
+	margin-bottom: 25px;
+}
+.scoreBoard div {
+	height: 80%;
+	width: 32.5%;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.9rem;
+}
+.play-x {
+	background-color: var(--green);
+}
+.tie {
+	background-color: var(--scriptColor);
+}
+.play-o {
+	background-color: var(--yellow);
+}
+.score {
+	height: 2.1rem !important;
+	width: 2.1rem !important;
+	font-weight: bolder;
+	font-size: 1.4rem !important;
+}
+.overlay{
+	height: 100vh;
+	width: 100vw;
+	background-color: var(--overlay);
+	position: absolute;
+	top: 0;
+	display: none;
+	align-items: center;
+}
+.winnerPopup{
+	width: 100%;
+	height: 30%;
+	background-color: var(--bgColorSoft);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.winnerMessage{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.winnerMessage p{
+	font-size: 1.6rem;
+	color: var(--green);
+	font-weight: 600;
+}
+.winnerMark{
+	height: 4.5rem;
+	width: 4.5rem;
+}
+
+.buttons{
+	display: flex;
+	gap: 1rem;
+}
+.quitButton,.adios{
+	height: 3.5rem;
+	width: 14rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--scriptColor);
+	border-radius: 15px;
+	color: var(--bgColor);
+	font-size: 1rem;
+	font-weight: 600;
+	box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .3);
+	cursor: pointer;
+}
+.nextRoundButton,.next{
+	height: 3.5rem;
+	width: 20rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--yellow);
+	border-radius: 15px;
+	color: var(--bgColor);
+	font-size: 1rem;
+	font-weight: 600;
+	box-shadow: inset 0 -3px 2px rgba(0, 0, 0, .3);
+	cursor: pointer;
+}
+
+.notice-tie{
+	color: var(--scriptColor);
+	letter-spacing: 0.07em;
+	margin-top: 20px;
+	font-size: 1.8em;
+	font-weight: 600;
+}
+.tiePopup{
+	width: 100%;
+	height: 25%;
+	background-color: var(--bgColorSoft);
+	display: none;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: column;
+}	

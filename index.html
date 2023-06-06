@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Tic Tac Toe</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styleJs.css'>
+    <script src="https://kit.fontawesome.com/afceef289c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="game-initializer">
+        <div id="icon">
+            <img class="X mark" src="assets/X.svg" alt="X">
+            <img class ="O mark" src="assets/O.svg" alt="O">
+        </div>
+        <div class="playerPick">
+            <h1>PICK PLAYER 1'S SIGN</h1>
+            <div class="mark-choice">
+                <div id="X">
+                    <svg id="svg1" viewBox="-1.92 -1.92 27.84 27.84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier"> 
+                            <path id ='path1' d="M6.70718 4.5858C6.31666 4.19528 5.68349 4.19528 5.29297 4.5858L4.58586 5.29291C4.19534 5.68343 4.19534 6.3166 4.58586 6.70712L9.87877 12L4.5859 17.2929C4.19537 17.6834 4.19537 18.3166 4.5859 18.7071L5.293 19.4142C5.68353 19.8048 6.31669 19.8048 6.70722 19.4142L12.0001 14.1214L17.293 19.4142C17.6835 19.8048 18.3167 19.8048 18.7072 19.4142L19.4143 18.7071C19.8048 18.3166 19.8048 17.6834 19.4143 17.2929L14.1214 12L19.4143 6.70712C19.8048 6.3166 19.8048 5.68343 19.4143 5.29291L18.7072 4.5858C18.3167 4.19528 17.6835 4.19528 17.293 4.5858L12.0001 9.87871L6.70718 4.5858Z" fill="#a9bec8"></path> </g></svg>                
+                </div>
+                <div id="O" class="bgWhite">
+                    <svg id="svg2" fill="#1f3641" width="159px" height="159px" viewBox="-10.56 -10.56 53.12 53.12" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#1f3641" stroke-width="3.2"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>circle</title> <path d="M0 16q0 3.264 1.28 6.208t3.392 5.12 5.12 3.424 6.208 1.248 6.208-1.248 5.12-3.424 3.392-5.12 1.28-6.208-1.28-6.208-3.392-5.12-5.088-3.392-6.24-1.28q-3.264 0-6.208 1.28t-5.12 3.392-3.392 5.12-1.28 6.208zM4 16q0-3.264 1.6-6.016t4.384-4.352 6.016-1.632 6.016 1.632 4.384 4.352 1.6 6.016-1.6 6.048-4.384 4.352-6.016 1.6-6.016-1.6-4.384-4.352-1.6-6.048z"></path> </g></svg>                </div>
+
+            </div>
+            <p class="notice">GOODLUCK BB &lt;3 </p>
+            
+        </div>
+        <button class="start-game">start game</button>
+    </section>
+    <section class="game-started">
+        <div class="upper-section">
+            <div class="logo">
+                <img class="X mark" src="assets/X.svg" alt="X">
+                <img class ="O mark" src="assets/O.svg" alt="O">
+            </div>
+            <div class="player-turn">
+                <div class="get-sign">
+                    
+                </div>
+                <h2>TURN</h2>
+            </div>
+            <div class="restart-btn">
+                <img src="assets/restart.svg" alt="restart">
+            </div>
+        </div>
+        <div class="main-section">
+            <div id ="0" class="box"></div>
+            <div id ="1" class="box"></div>
+            <div id ="2" class="box"></div>
+            <div id ="3" class="box"></div>
+            <div id ="4" class="box"></div>
+            <div id ="5" class="box"></div>
+            <div id ="6" class="box"></div>
+            <div id ="7" class="box"></div>
+            <div id ="8" class="box"></div>
+        </div>
+        <div class="scoreBoard">
+            <div class="play-x">
+                <p>PLAYER X</p>
+                <div class="score xPlayer">0</div>
+            </div>
+            <div class="tie">
+                <p>TIES</p>
+                <div class="score Tie">0</div>
+            </div>
+            <div class="play-o">
+                <p>PLAYER O</p>
+                <div class="score oPlayer">0</div>
+            </div>
+        </div>
+    </section>
+    <div class="overlay">
+        <div class="winnerPopup">
+            <p class="notice">Congratulations !</p>
+            <div class="winnerMessage">
+                <img class ="winnerMark" src="" alt="X">
+                <p>TAKES THE ROUND</p>
+            </div>
+            <div class="buttons">
+                <div class="quitButton">QUIT</div>
+                <div class="nextRoundButton">NEXT ROUND</div>
+            </div>
+        </div>
+        <div class="tiePopup">
+            <p class="notice-tie">IT'S A TIE!</p>
+            <div class="buttons">
+                <div class="adios">QUIT</div>
+                <div class="next">NEXT ROUND</div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src='main.js'></script>
+</body>
+</html>
